@@ -1,5 +1,5 @@
 
-require "./phone_number"
+require "./Phone_number"
 class Contact
   attr_writer :first_name, :middle_name, :last_name
   attr_reader :phone_numbers
