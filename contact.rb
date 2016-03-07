@@ -1,5 +1,19 @@
+
+require "./phone_number"
 class Contact
   attr_writer :first_name, :middle_name, :last_name
+  attr_reader :phone_numbers
+
+  def initialize
+    @phone_numbers = []
+  end
+
+  def add_phone_number(kind, number)
+    phone_number = PhoneNumber.new
+    phone_number.kind = kind
+    phone_number.number = number
+    phone_numbers.push(phone_number)
+  end
 
   def first_name
     @first_name
@@ -55,6 +69,11 @@ def to_s(format = 'full_name')
       first_last
     end
   end
+
+  def print_phone_numbers
+    puts "Phone Numbers"
+    phone_numbers.each { |phone_number| puts phone_number }
+  end
 end
 
 
@@ -68,7 +87,15 @@ name.middle_name = gets.chomp
 puts "What is your last name?"
 name.last_name = gets.chomp
 
-#puts name.full_name
+puts "What phone is this?"
+what_phone = gets.chomp
+
+puts "What is the phone number?"
+what_phone_number = gets.chomp
+
+name.add_phone_number(what_phone, what_phone_number)
+name.print_phone_numbers
+
 
 puts name.to_s('full_name')
 puts name.to_s('last_first')
