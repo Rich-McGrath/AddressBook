@@ -27,6 +27,6 @@ home.city = "Portland"
 home.state = "OR"
 home.postal_code =  "12345"
 
-puts home.to_s('shot')
-# puts "\n"
+puts home.to_s('short')
+puts "\n"
 puts home.to_s('long')
