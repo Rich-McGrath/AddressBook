@@ -1,11 +1,12 @@
-
-require "./Phone_number"
+require './Phone_number'
+require  './Address'
 class Contact
   attr_writer :first_name, :middle_name, :last_name
-  attr_reader :phone_numbers
+  attr_reader :phone_numbers, :addresses
 
   def initialize
     @phone_numbers = []
+    @addresses = []
   end
 
   def add_phone_number(kind, number)
@@ -13,6 +14,17 @@ class Contact
     phone_number.kind = kind
     phone_number.number = number
     phone_numbers.push(phone_number)
+  end
+
+  def add_address(kind, street_1, street_2, city, state, postal_code)
+    address = Address.new
+    address.kind = kind
+    address.street_1 = street_1
+    address.street_2 = street_2
+    address.city = city
+    address.state = state
+    address.postal_code = postal_code
+    addresses.push(address)
   end
 
   def first_name
@@ -74,6 +86,11 @@ def to_s(format = 'full_name')
     puts "Phone Numbers"
     phone_numbers.each { |phone_number| puts phone_number }
   end
+
+  def print_addresses
+    puts "Addresses"
+    addresses.each { |address| puts address.to_s('short') }
+  end
 end
 
 
@@ -93,9 +110,28 @@ what_phone = gets.chomp
 puts "What is the phone number?"
 what_phone_number = gets.chomp
 
-name.add_phone_number(what_phone, what_phone_number)
-name.print_phone_numbers
+puts "What address is this?"
+what_home = gets.chomp
 
+puts "What is the Street Address?"
+what_street = gets.chomp
+
+puts "What is the State?"
+what_state = gets.chomp
+
+puts "What is the City?"
+what_city = gets.chomp
+
+puts "What is the Zip Code?"
+what_zipcode = gets.chomp
+
+puts clear
+
+name.add_address(what_home, what_street, "", what_state, what_city, what_zipcode)
+name.add_phone_number(what_phone, what_phone_number)
+
+name.print_phone_numbers
+name.print_addresses
 
 puts name.to_s('full_name')
 puts name.to_s('last_first')
