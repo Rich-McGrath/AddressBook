@@ -125,8 +125,6 @@ what_city = gets.chomp
 puts "What is the Zip Code?"
 what_zipcode = gets.chomp
 
-puts clear
-
 name.add_address(what_home, what_street, "", what_state, what_city, what_zipcode)
 name.add_phone_number(what_phone, what_phone_number)
 
