@@ -26,6 +26,17 @@ class AddressBook
     end
   end
 
+  def add_contact
+    contact = Contact.new
+    print "First name: "
+    contact.first_name = gets.chomp
+    print "Middle name: "
+    contact.middle_name = gets.chomp
+    print "Last name: "
+    contact.last_name = gets.chomp
+    contacts.push(contact)
+  end
+
  def find_by_name(name)
    results = []
    search = name.downcase
