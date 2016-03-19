@@ -28,6 +28,7 @@ class AddressBook
       puts 'a: Add Contact'
       puts 'p: Print Address Book'
       puts 'e: Exit'
+      puts 'd: Delete Contact'
       print 'Enter your choice:'
       input = gets.chomp
       case input
@@ -35,6 +36,10 @@ class AddressBook
         add_contact
       when 'p'
         print_contact_list
+      when 'd'
+        print 'Enter in contacts last name: '
+        delete_name = gets.chomp
+        delete_contact(delete_name)
       when 'e'
         save()
         break
@@ -94,6 +99,18 @@ class AddressBook
     end
     contacts.push(contact)
   end
+
+  def delete_contact(name)
+    last_name = name.downcase
+    contacts.each do |contact|
+      if contact.last_name.downcase.include?(last_name)
+        contact.last_name.delete(last_name)
+      else
+        break
+      end
+    end
+  end
+
 
  def find_by_name(name)
    results = []
