@@ -10,10 +10,16 @@ class AddressBook
   def run
     loop do
       puts 'Address Book'
+      puts 'a: Add Contact'
+      puts 'p: Print Address Book'
       puts 'e: Exit'
       print 'Enter your choice:'
       input = gets.chomp
       case input
+      when 'a'
+        add_contact
+      when 'p'
+        print_contact_list
       when 'e'
         break
       end
