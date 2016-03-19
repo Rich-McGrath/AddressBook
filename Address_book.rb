@@ -7,6 +7,19 @@ class AddressBook
     @contacts = []
   end
 
+  def run
+    loop do
+      puts 'Address Book'
+      puts 'e: Exit'
+      print 'Enter your choice:'
+      input = gets.chomp
+      case input
+      when 'e'
+        break
+      end
+    end
+  end
+
  def find_by_name(name)
    results = []
    search = name.downcase
@@ -65,3 +78,4 @@ end
 end #end of Address Class
 
 address_book = AddressBook.new
+address_book.run
