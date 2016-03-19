@@ -65,18 +65,3 @@ end
 end #end of Address Class
 
 address_book = AddressBook.new
-
-#Hard Coding one Address Book Entry
-jason = Contact.new
-jason.first_name = "Jason"
-jason.last_name = "Seifer"
-jason.add_phone_number("Home", "123-456-7890")
-jason.add_phone_number("Work", "456-789-0123")
-jason.add_address("Home", "123 Main St.", "", "Portland", "OR", "12345")
-
-#address_book.contacts.push(jason)
-#address_book.print_contact_list
-
-address_book.find_by_name("e")
-address_book.find_by_phone_number("2")
-address_book.find_by_address("271 W 47th")
