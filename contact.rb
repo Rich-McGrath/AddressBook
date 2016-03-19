@@ -94,36 +94,36 @@ def to_s(format = 'full_name')
 end
 
 
-name = Contact.new
-puts "What is your first name?"
-name.first_name = gets.chomp
+# name = Contact.new
+# puts "What is your first name?"
+#name.first_name = gets.chomp
 
-puts "what is your middle name?"
-name.middle_name = gets.chomp
+#puts "what is your middle name?"
+#name.middle_name = gets.chomp
 
-puts "What is your last name?"
-name.last_name = gets.chomp
+#puts "What is your last name?"
+#name.last_name = gets.chomp
 
-puts "What phone is this?"
-what_phone = gets.chomp
+#puts "What phone is this?"
+#what_phone = gets.chomp
 
-puts "What is the phone number?"
-what_phone_number = gets.chomp
+#puts "What is the phone number?"
+#what_phone_number = gets.chomp
 
-puts "What address is this?"
-what_home = gets.chomp
+#puts "What address is this?"
+#what_home = gets.chomp
 
-puts "What is the Street Address?"
-what_street = gets.chomp
+#puts "What is the Street Address?"
+#what_street = gets.chomp
 
-puts "What is the State?"
-what_state = gets.chomp
+#puts "What is the State?"
+#what_state = gets.chomp
 
-puts "What is the City?"
-what_city = gets.chomp
+#puts "What is the City?"
+#what_city = gets.chomp
 
-puts "What is the Zip Code?"
-what_zipcode = gets.chomp
+#puts "What is the Zip Code?"
+#what_zipcode = gets.chomp
 
-name.add_address(what_home, what_street, "", what_state, what_city, what_zipcode)
-name.add_phone_number(what_phone, what_phone_number)
+#name.add_address(what_home, what_street, "", what_state, what_city, what_zipcode)
+#name.add_phone_number(what_phone, what_phone_number)
