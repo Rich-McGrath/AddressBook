@@ -50,7 +50,6 @@ class AddressBook
     contact.middle_name = gets.chomp
     print "Last name: "
     contact.last_name = gets.chomp
-    contacts.push(contact)
 
     loop do
       puts 'Add phone number or address? '
@@ -133,12 +132,9 @@ end
    print_results("Address search results (#{search})", results)
  end
 
-
   def print_contact_list
     puts "Contact List"
-    contacts.each do |contact|
-      puts contact.to_s('last_first')
-    end
+    contacts.each { |contact| puts contact.to_s('last_first') }
   end
 
   def print_results(search, results)

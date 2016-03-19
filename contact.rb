@@ -27,6 +27,16 @@ class Contact
     addresses.push(address)
   end
 
+  def print_phone_numbers
+    puts "Phone Numbers"
+    phone_numbers.each { |phone_number| puts phone_number }
+  end
+
+  def print_addresses
+    puts "Addresses"
+    addresses.each { |address| puts address.to_s('short') }
+  end
+
   def first_name
     @first_name
   end
@@ -66,8 +76,7 @@ class Contact
     full_name
   end
 
-
-def to_s(format = 'full_name')
+  def to_s(format = 'full_name')
     case format
     when 'full_name'
       full_name
@@ -82,13 +91,4 @@ def to_s(format = 'full_name')
     end
   end
 
-  def print_phone_numbers
-    puts "Phone Numbers"
-    phone_numbers.each { |phone_number| puts phone_number }
-  end
-
-  def print_addresses
-    puts "Addresses"
-    addresses.each { |address| puts address.to_s('short') }
-  end
 end
