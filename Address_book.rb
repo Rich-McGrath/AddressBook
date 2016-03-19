@@ -40,6 +40,7 @@ class AddressBook
       puts 'Add phone number or address? '
       puts 'p: Add phone number'
       puts 'a: Add address'
+      puts 's: To Search'
       puts '(Press any other key to go back)'
       response = gets.chomp.downcase
       case response
@@ -61,8 +62,16 @@ class AddressBook
         print 'City: '
         address.city = gets.chomp
         print 'State: '
+        address.state = gets.chomp
+        print 'Postal Code: '
         address.postal_code = gets.chomp
         contact.addresses.push(address)
+      when 's'
+        print 'Search term: '
+        search = gets.chomp
+        find_by_name(search)
+        find_by_phone_number(search)
+        find_by_address(search)
       else
         print '\n'
         break
